@@ -19,4 +19,8 @@ england = article[u'イギリス']['text']
 
 for line in england.splitlines():
 	if line.find('Category') >= 0:
-		print re.split(":", line)
+		#match = re.match(r"Category:(.*)", line)
+		#print match.group(1)
+		s = re.split(":", line)[1]
+		print s.replace("]", "").replace("*", "").replace("|", "")
+		#print s.translate(None, "]")
